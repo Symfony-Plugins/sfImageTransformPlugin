@@ -115,7 +115,7 @@ class sfImageFillGD extends sfImageTransformAbstract
    */
   public function setFill($fill)
   {
-    if (preg_match('/#[\d\w]{6}/',$fill) || (is_object($fill) && class_name($fill) === 'sfImage'))
+    if ((is_object($fill) && class_name($fill) === 'sfImage') || preg_match('/#[\d\w]{6}/',$fill))
     {
       $this->fill = $fill;
 
